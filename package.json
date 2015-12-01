@@ -1,0 +1,29 @@
+{
+  "name": "leap-vr-android",
+  "version": "1.0.0",
+  "description": "Leap motion + NodeJS to Android VR.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mraiur/leap-vr-android.git"
+  },
+  "keywords": [
+    "leap",
+    "android",
+    "nodejs",
+    "vr"
+  ],
+  "author": "Nikolay Ivanov <mraiur@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mraiur/leap-vr-android/issues"
+  },
+  "homepage": "https://github.com/mraiur/leap-vr-android#readme",
+  "dependencies": {
+    "qrcode-terminal": "^0.10.0"
+  }
+}
