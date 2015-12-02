@@ -3,6 +3,7 @@ var url = require('url');
 var fs = require('fs');
 var qrcode = require('qrcode-terminal');
 var socketIO = require('socket.io');
+var leap = require('leapjs');
 var config = {
     port: 5555,
     root: __dirname+"/",
@@ -61,10 +62,22 @@ var io = socketIO(server);
 io.on('connection', function (socket) {
     console.log('user connected');
 
-    socket.emit('test-message', 'da');
+    leap.loop(function(frame){
+        for (var i in frame.handsMap) {
+            var hand = frame.handsMap[i];
+
+            var data = {
+                roll: hand.roll(),
+                pitch: hand.pitch(),
+                yaw: hand.yaw(),
+                direction: hand.direction
+            };
+
+            socket.broadcast.emit('hand', data);
+        }
+    });
 
     socket.on('disconnect', function () {
         console.log('user disconected');        
     });
 });
-

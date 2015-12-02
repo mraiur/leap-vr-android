@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/mraiur/leap-vr-android#readme",
   "dependencies": {
-    "qrcode-terminal": "^0.10.0"
+    "leapjs": "^0.6.4",
+    "qrcode-terminal": "^0.10.0",
+    "socket.io": "^1.3.7"
   }
 }
